@@ -1,0 +1,25 @@
+stages:
+  - build
+  - deploy
+
+build:
+  services:
+    - docker:dind
+  image: docker:latest
+  stage: build
+  script:
+    - docker run -v `pwd`:/src northernv/hugo hugo
+  artifacts:
+    paths:
+      - public/
+
+deploy:
+  stage: deploy
+  image: garland/aws-cli-docker
+  variables:
+    S3_BUCKET_NAME: "bali.guide.outsite.co"
+  script:
+  - aws configure set preview.cloudfront true
+  - aws s3 sync ./public s3://$S3_BUCKET_NAME --delete;
+  dependencies:
+  - build
