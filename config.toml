@@ -26,7 +26,7 @@ description = "Bali // Canggu"
 title404 = "Nothing's here!"
 
 [params.assets]
-favicon = "favicon.ico"
+favicon = "outsite-favicon.png"
 css = ["css/custom.css"]
 js = ["js/custom.js"]
 gopher = "" # used in 404 template ( Generator: https://gopherize.me )

@@ -5,6 +5,7 @@ linkTitle: Stay
 menu: main
 weight: 1
 slug: stay
+toc: true
 ---
 
 First off, the Outsite staff are all rockstarts. They carry out a number of tasks every day to ensure you are happy and that these grounds are well kept.
